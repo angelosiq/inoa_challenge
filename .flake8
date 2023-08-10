@@ -1,0 +1,4 @@
+[flake8]
+exclude = wsgi.py,env/*,*/migrations/*,venv/*,.env/*,.venv/*,doc/*
+import-order-style = smarkets
+max-line-length = 120

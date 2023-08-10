@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "inoa-challenge"
+version = "0.1.0"
+description = ""
+authors = ["Angelo Siqueira <angeloasiqueira@gmail.com>"]
+readme = "README.md"
+packages = [{include = "./app/inoa_challenge"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+python-decouple = "^3.8"
+psycopg2-binary = "^2.9.7"
+whitenoise = "^6.5.0"
+dj-database-url = "^2.0.0"
+djangorestframework = "^3.14.0"
+
+
+[tool.poetry.group.dev.dependencies]
+django-extensions = "^3.2.3"
+ipython = "^8.14.0"
+pre-commit = "^3.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+
+[tool.bandit]
+exclude = "/tests"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 120
+default_section = "THIRDPARTY"
+known_third_party = []
+known_first_party = []

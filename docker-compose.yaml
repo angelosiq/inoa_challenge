@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  inoa-challenge:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./app:/project/app/
+    command: local
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - "postgres-db"
+    networks:
+      - public
+      - private
+
+  postgres-db:
+    image: postgres:15.2
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    networks:
+      - public
+      - private
+
+networks:
+  public:
+  private:
+
+volumes:
+  postgres-data:
