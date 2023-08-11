@@ -19,13 +19,38 @@ services:
       - private
 
   postgres-db:
-    image: postgres:15.2
+    image: postgres:15.3-alpine
     volumes:
       - postgres-data:/var/lib/postgresql/data
     env_file:
       - .env
     networks:
       - public
+      - private
+
+  redis:
+    image: redis:7.0.0-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - private
+      - public
+
+  celery:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    command: celery-local
+    env_file:
+      - .env
+    volumes:
+      - ./app:/project/app/
+    ports:
+      - "6900:6900"
+    depends_on:
+      - postgres-db
+      - redis
+    networks:
       - private
 
 networks:

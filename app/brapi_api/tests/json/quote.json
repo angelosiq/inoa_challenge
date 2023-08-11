@@ -1,0 +1,35 @@
+{
+    "results": [
+      {
+        "symbol": "COGN3",
+        "shortName": "COGNA ON    ON      NM",
+        "longName": "Cogna Educação S.A.",
+        "currency": "BRL",
+        "regularMarketPrice": 2.71,
+        "regularMarketDayHigh": 2.76,
+        "regularMarketDayLow": 2.67,
+        "regularMarketDayRange": "2.67 - 2.76",
+        "regularMarketChange": -0.029999971,
+        "regularMarketChangePercent": -1.0948894,
+        "regularMarketTime": "2022-05-27T20:07:32.000Z",
+        "marketCap": 5134067712,
+        "regularMarketVolume": 14629600,
+        "regularMarketPreviousClose": 2.74,
+        "regularMarketOpen": 2.74,
+        "averageDailyVolume10Day": 31275150,
+        "averageDailyVolume3Month": 40639808,
+        "fiftyTwoWeekLowChange": 0.73,
+        "fiftyTwoWeekLowChangePercent": 0.36868688,
+        "fiftyTwoWeekRange": "1.98 - 4.9",
+        "fiftyTwoWeekHighChange": -2.19,
+        "fiftyTwoWeekHighChangePercent": -0.44693878,
+        "fiftyTwoWeekLow": 1.98,
+        "fiftyTwoWeekHigh": 4.9,
+        "twoHundredDayAverage": 2.60825,
+        "twoHundredDayAverageChange": 0.101750135,
+        "twoHundredDayAverageChangePercent": 0.039010886
+      }
+    ],
+    "requestedAt": "2022-05-29T00:46:10.808000-03:00",
+    "took": "8 ms"
+  }

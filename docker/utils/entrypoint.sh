@@ -14,4 +14,10 @@ if [ "$1" = 'local' ]; then
 elif [ "$1" = 'debug' ]; then
     exec tail -f /dev/null
 
+elif [ "$1" = 'celery-local' ]; then
+    shift
+    export PYTHONPATH='/app'
+    echo "RUNNING CELERY WITH DEBUGPY AT localhost:6900"
+    python -m debugpy --listen 0.0.0.0:6900 -m celery -A celery_worker worker --beat -E -l INFO
+
 fi

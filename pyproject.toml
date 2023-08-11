@@ -14,12 +14,23 @@ psycopg2-binary = "^2.9.7"
 whitenoise = "^6.5.0"
 dj-database-url = "^2.0.0"
 djangorestframework = "^3.14.0"
+celery = "^5.3.1"
+redis = "^4.6.0"
+django-celery-beat = "^2.5.0"
+urllib3 = "^2.0.4"
+django-cors-headers = "^4.2.0"
 
 
 [tool.poetry.group.dev.dependencies]
 django-extensions = "^3.2.3"
 ipython = "^8.14.0"
 pre-commit = "^3.3.3"
+debugpy = "^1.6.7.post1"
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+pytest-django = "^4.5.2"
+responses = "^0.23.3"
+model-bakery = "^1.13.0"
 
 [build-system]
 requires = ["poetry-core"]

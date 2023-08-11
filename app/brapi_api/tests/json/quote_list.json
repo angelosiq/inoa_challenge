@@ -1,0 +1,20 @@
+{
+    "indexes": [
+      {
+        "stock": "^BVSP",
+        "name": "IBOVESPA"
+      }
+    ],
+    "stocks": [
+      {
+        "stock": "IBOB11",
+        "name": "PACTUAL IBOVCI",
+        "close": 93.51,
+        "change": 0.53757444,
+        "volume": 2467,
+        "market_cap": null,
+        "logo": "https://s3-symbol-logo.tradingview.com/pactual-ibovci--big.svg",
+        "sector": null
+      }
+    ]
+  }

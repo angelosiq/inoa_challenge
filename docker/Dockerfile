@@ -1,4 +1,4 @@
-FROM python:3.11.0-slim
+FROM python:3.11.3-slim
 
 ENV PYTHONUNBUFFERED 1
 ENV TZ 'America/Sao_Paulo'

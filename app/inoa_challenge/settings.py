@@ -43,14 +43,19 @@ INSTALLED_APPS = [
     # third-party apps
     "django_extensions",
     "rest_framework",
+    "django_celery_beat",
+    "corsheaders",
     # local apps
-    "stocks.apps.StocksConfig",
+    "brapi_api",
+    "core",
+    "stocks",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -128,7 +133,25 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-BASE_TIMEOUT = config("BASE_TIMEOUT", default=30, cast=int)
+# CELERY
+
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+CELERY_BROKER_URL = config("CELERY_BROKER_URL", "redis://redis:6379/0")
+CELERY_RESULT_BACKEND = config("CELERY_RESULT_BACKEND", "redis://redis:6379/0")
 
 # B3 API SETTINGS
 BRAPI_API_URL = config("BRAPI_API_URL", default="https://brapi.dev")
+BASE_TIMEOUT = config("BASE_TIMEOUT", default=30, cast=int)
+
+# CORS
+CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS", cast=Csv(), default="http://localhost:4200")
+
+# REST FRAMEWORK
+REST_FRAMEWORK = {
+    "PAGE_SIZE": 10,
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "DEFAULT_RENDERER_CLASSES": (
+        "rest_framework.renderers.JSONRenderer",
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ),
+}
