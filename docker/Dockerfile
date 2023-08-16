@@ -18,8 +18,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
     poetry install --no-interaction --no-ansi --no-cache ${EXTRA_ARGS_INSTALL} && \
     pip uninstall --yes poetry
 
-RUN pip install pipenv && pipenv install ${REQUIREMENTS}
-
 COPY ./docker/utils/wait_for_postgres.py /wait_for_postgres.py
 COPY ./docker/utils/entrypoint.sh /entrypoint.sh
 

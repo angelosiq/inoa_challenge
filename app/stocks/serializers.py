@@ -1,18 +1,26 @@
 from rest_framework import serializers
+from stocks.models import PriceLogUserProfile, Stock, StockUserProfile, UserProfile
 
-from .models import Price, Stock
+
+class StockUserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StockUserProfile
+        fields = "__all__"
 
 
 class StockSerializer(serializers.ModelSerializer):
-
-    remote_endpoint = serializers.CharField(read_only=True)
-
     class Meta:
         model = Stock
         fields = "__all__"
 
 
-class PriceSerializer(serializers.ModelSerializer):
+class PriceLogSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Price
+        model = PriceLogUserProfile
+        fields = "__all__"
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
         fields = "__all__"

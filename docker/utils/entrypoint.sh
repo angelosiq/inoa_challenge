@@ -18,6 +18,6 @@ elif [ "$1" = 'celery-local' ]; then
     shift
     export PYTHONPATH='/app'
     echo "RUNNING CELERY WITH DEBUGPY AT localhost:6900"
-    python -m debugpy --listen 0.0.0.0:6900 -m celery -A celery_worker worker --beat -E -l INFO
+    python -m debugpy --listen 0.0.0.0:6900 -m celery -A celery_worker worker --beat -E -l DEBUG
 
 fi

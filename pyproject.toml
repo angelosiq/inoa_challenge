@@ -19,6 +19,7 @@ redis = "^4.6.0"
 django-celery-beat = "^2.5.0"
 urllib3 = "^2.0.4"
 django-cors-headers = "^4.2.0"
+channels = {extras = ["daphne"], version = "^4.0.0"}
 
 
 [tool.poetry.group.dev.dependencies]
